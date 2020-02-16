@@ -1,0 +1,15 @@
+Implementation Instruction
+-------------------------------
+Create an Directory and copy all file
+
+Start the Script SecureTomcatJDBC.sh
+
+Enter the CATALINA_HOME directory as an Input and JAVA_HOME and All other Required Parameters will be auto fetched
+
+Enter the Password to Encrypt including the Pass Phrase
+
+Copy the Generated SecureTomcatJDBC.jar into the $CATALINA_HOME/lib directory
+
+Replace the Factory element in Context.xml with factory=“SecureTomcatDataSourceImpl”
+
+Replace the Encrypted Password in place of Clear Text Password password="ENCRYPTED PASSWORD”
