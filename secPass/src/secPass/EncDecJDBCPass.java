@@ -12,11 +12,10 @@
  * Modification History:
  * V2.1,     Dhananjay, 17/11/2012
  *           1. Hash key change and make it customize
+ *           2. Run direct
  *  * ===================================================
  */
 package secPass;
-
-
 
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
