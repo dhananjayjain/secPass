@@ -42,6 +42,7 @@ public class SecureTomcatDataSourceImpl extends DataSourceFactory {
         // Here we decrypt our password.
         PoolConfiguration poolProperties = SecureTomcatDataSourceImpl.parsePoolProperties(properties);
         poolProperties.setPassword(encryptor.decrypt(poolProperties.getPassword()));
+        // Djain Used when we need USERNAME  is  also in nencrypted form        
         //poolProperties.setUsername(encryptor.decrypt(poolProperties.getUsername()));
         // The rest of the code is copied from Tomcat's DataSourceFactory.
         if (poolProperties.getDataSourceJNDI() != null && poolProperties.getDataSource() == null) {
