@@ -1,3 +1,24 @@
+/* ===================================================
+ * Copyright   : IT
+ * Company Name: Silver Touch Ltd.
+ * Project Name: Income tax Dept
+ * Module Name : Encrypt Password
+ * Functionality :To set up a encrypt database password in Connection String 
+ * File Name   : SecureTomcatDataSourceImpl.java
+ * @Author     : Dhananjay Jain
+ * Date of Development:- Dec 1, 2011 / Modification:- Dec 1, 2011
+ * @since      : Sep 19, 2011, 03:27:11 PM
+ * Version Information: 2.0, Dhananjay, 6/02/2012
+ * Modification History:
+ * V2.1,     Dhananjay, 17/11/2012
+ *           1. Added id to all the div so as to enable or disable it in the form
+ * V2.2,     Dhananjay, 17/11/2012
+ *           1. Added proper tab indexing
+ * 
+ * ===================================================
+ */
+ 
+
 package secPass;
 
 import java.io.UnsupportedEncodingException;
@@ -42,9 +63,12 @@ public class SecureTomcatDataSourceImpl extends DataSourceFactory {
         // Here we decrypt our password.
         PoolConfiguration poolProperties = SecureTomcatDataSourceImpl.parsePoolProperties(properties);
         poolProperties.setPassword(encryptor.decrypt(poolProperties.getPassword()));
-        // Djain : Used when we need USERNAME  is  also in encrypted form then open this comment only.
-        // and put decrypt user name in xml file 
+        
+        // Djain : Used when we need USERNAME  is  also in encrypted form then open this comment only. and put decrypt user name in xml file 
+        
         //poolProperties.setUsername(encryptor.decrypt(poolProperties.getUsername()));
+        poolProperties.setUsername(encryptor.decrypt(poolProperties.getUsername()));
+        
         // The rest of the code is copied from Tomcat's DataSourceFactory.
         if (poolProperties.getDataSourceJNDI() != null && poolProperties.getDataSource() == null) {
             performJNDILookup(context, poolProperties);

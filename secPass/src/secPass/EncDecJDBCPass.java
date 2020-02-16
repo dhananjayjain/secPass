@@ -1,11 +1,22 @@
-
+/* ===================================================
+ * Copyright   : IT
+ * Company Name: Silver Touch Ltd.
+ * Project Name: Income tax Dept
+ * Module Name : Encrypt Password
+ * Functionality :To set up a Allgrothrim 
+ * File Name   : EncDecJDBCpass.java
+ * @Author     : Dhananjay Jain
+ * Date of Development:- Dec 1, 2011 / Modification:- Dec 1, 2011
+ * @since      : Sep 19, 2011, 03:27:11 PM
+ * Version Information: 2.0, Dhananjay, 6/02/2012
+ * Modification History:
+ * V2.1,     Dhananjay, 17/11/2012
+ *           1. Hash key change and make it customize
+ *  * ===================================================
+ */
 package secPass;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
@@ -28,7 +39,7 @@ public class EncDecJDBCPass {
     
     private static final String ALGORITHM = "AES";
 
-    private static final String defaultSecretKey = "PHRASETOREPLACE";
+    private static final String defaultSecretKey = "@dhananjayjain@";
 
     private Key secretKeySpec;
 
