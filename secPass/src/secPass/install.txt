@@ -10,6 +10,28 @@ Enter the Password to Encrypt including the Pass Phrase
 
 Copy the Generated SecureTomcatJDBC.jar into the $CATALINA_HOME/lib directory
 
-Replace the Factory element in Context.xml with factory=ìSecureTomcatDataSourceImplî
+Replace the Factory element in Context.xml with factory=‚ÄúSecureTomcatDataSourceImpl‚Äù
 
-Replace the Encrypted Password in place of Clear Text Password password="ENCRYPTED PASSWORDî
+Replace the Encrypted Password in place of Clear Text Password password="ENCRYPTED PASSWORD‚Äù
+
+
+In Regular Context.xml
+<Resource name="jdbc/TestDB"
+          auth="Container"
+          type="javax.sql.DataSource"
+          factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+          testWhileIdle="true"
+          testOnBorrow="true"
+          testOnReturn=‚Äúfalse"
+          password="S3CuR3"
+........
+........
+With SecureTomcatJDBC in Context.xml
+<Resource name="jdbc/TestDB"
+          auth="Container"
+          type="javax.sql.DataSource"
+          factory="SecureTomcatDataSourceImpl"
+          testWhileIdle="true"
+          testOnBorrow="true"
+          testOnReturn=‚Äúfalse"
+          password="5d89fd5f9b0b3542a795873ac9c029e7"
